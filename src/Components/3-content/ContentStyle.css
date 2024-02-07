@@ -20,7 +20,7 @@ main{
 
 
 .LeftSection button{
-    background-color: rgba(36,37,46,1);
+    background-color: var(--color-background-projects);
     width:15rem;
     padding: 0.7rem 0;
     text-align: center;
@@ -34,11 +34,12 @@ main{
 }
 
 .BtProjects:hover,.BtTools:hover,.BtTools.active,.BtProjects.active{
-    color:white ;
+    color: var(--color-text-projects);
     opacity: 1.5;
     border: 1px solid rgba(181, 181, 237, 0.918) !important;
     transition:0.4s ease-in-out;
 }
+
 .card {
     padding: 10px;
     border:1px solid rgba(93, 188 ,252 ,0.3);
@@ -103,6 +104,8 @@ main{
 .icons { 
     display: flex;
     justify-content: space-between; 
+    margin-left: 3.5em;
+    margin-top: 20px;
 }
 
 .iconsCard {

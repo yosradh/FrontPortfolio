@@ -1,4 +1,4 @@
-import Header from "./Components/1-header/header"
+import { useEffect } from "react"
 import Hero from "./Components/2-hero/Hero"
 import DetailsCard from "./Components/3-content/DetailsCard"
 import Content from "./Components/3-content/content"
@@ -10,8 +10,10 @@ import NoPage from "./Components/NoPage"
 import Tools from "./Components/Tools/Tools"
 import './index.css';
 import { Routes, Route } from "react-router-dom";
+import Header from "./Components/1-header/Header"
 
 function App() {
+
 
   return (
     <div className="containerApp">

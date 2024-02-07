@@ -7,7 +7,7 @@ header {
 }
 
 header ul.flex{
-    gap:1em;
+    gap:1.7em;
 }
 
 header nav.navbar {
@@ -17,7 +17,7 @@ header nav.navbar {
     box-shadow:1px 1px 20px rgb(143,150,152,0.7) ;/*3eme valeur pour light autour du box*/
     height: 4.2em;
     font-size: 15px;
-
+    margin-left:14em;
 }
 
 header ul li Link{
@@ -56,9 +56,21 @@ header button{
     width:60px;
     height:60px;
     border-radius:30px;
-    background-color: var(--color-background-navbar);
-    border:2px solid var(--color-divider);
+    background-color: var(--color-background-Mood);
+    border:2px solid var(--color-border-Mood);
 }
+.Mood{
+    display:flex;
+}
+.Langue{
+    height:30px;
+    width:50px;
+    margin-top:1em;
+    background-color: var(--color-background-main);
+    color:var(--color-text-body);
+    border:2px solid var(--color-background-main);
+}
+
 
 
 .MenuDiv:hover ,.Mood:hover{
@@ -157,6 +169,14 @@ p.navigationTitle{
     margin-top:-4px;
 }
 
+.icon-sun{
+    color: yellow;
+    font-size: 45px;
+    left:4px;
+    top:4px;
+    position: relative;
+}
+
 .Avatar{
     width: 3.8em;
     background: transparent;
@@ -212,6 +232,7 @@ p.navigationTitle{
         box-shadow:1px 1px 20px rgb(143,150,152,0.7) ;/*3eme valeur pour light autour du box*/
         height: 4.2em;
         font-size: 13.5px;
+        margin-left: 1em;
     }
 
 }
@@ -226,6 +247,23 @@ p.navigationTitle{
         box-shadow:1px 1px 20px rgb(143,150,152,0.7) ;/*3eme valeur pour light autour du box*/
         height: 4.2em;
         font-size: 13.5px;
-    }
 
+    }
+        
+    header ul.flex{
+        gap:1.3em;
+    }
+}
+
+
+/*pour avoir un taille perfect pour le navbar */
+@media (max-width:1600px) and (min-width:1170px)  {
+    header nav.navbar {
+        margin-left: 1em;
+        border: 1px solid red;
+    }
+        
+    header ul.flex{
+        gap:1.5em;
+    }
 }

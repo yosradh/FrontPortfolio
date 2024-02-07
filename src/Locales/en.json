@@ -1,0 +1,60 @@
+
+{
+    "header":{ 
+        "Accueil" : "Home",
+        "Compétences":"Skills",
+        "Projets":"Projects",
+        "Outils":"Tools",
+        "Contact":"Contact",
+        "Navigation": "Navigation"
+    },
+    "hero": {
+        "Bonjour": "Hello, I am",
+        "Nom":"Maher Jouini",
+        "title":"Sr Game, Tools & Network Developer, University Teacher, and Automation Engineer.",
+        "subTitle": "Sr Game, Tools & Network Developer / University Teacher / Automation Engineer",
+        "seeMore": "See more",
+        "contactMe": "CONTACT ME"
+      },
+    "content": {
+        "allProjects": "all projects",
+        "PC & Consoles Games": "PC & Consoles Games",
+        "Personal Projects": "Personal Projects",
+        "Mobile Casuals": "Mobile Casuals",
+        "Mobile Hyper Casuals": "Mobile Hyper Casuals",
+        "VR/AR": "VR/AR",
+        "More": "more"
+      },
+      "contact":{
+        "contactTitle":"Contact us",
+        "subtitle":"Contact us for more information and Get notified when I publish something new.",
+        "NomPrénom": "Full Name *:",
+        "ObjectEmail": "Email Subject *:",
+        "EmailAdresse": "Email Address *:",
+        "Yourmessage": "Your message *:",
+        "Submitting": "Submitting ...",
+        "Submit": "Submit",
+        "Your message has been sent successfully": "Your message has been successfully sent 👌",
+        "Champ obligatoire": "* Required field",
+        "PlaceholderNom":"Full Name",
+        "PlaceholderObject":"Email Subject",
+        "PlaceholderEmail":"Email Address",
+        "PlaceholderMessage":"Your message"
+      },
+      "footer":{
+        "droits":" All rigths reserved."
+      },
+      "competances":{
+        "titre1": "Skills",
+        "description":"They are constantly improving because, for me, the joy of this profession means that we learn something new every day, especially when one is involved, curious, and passionate",
+        "titre2": "experiences",
+        "telecharger":"Download"
+      },
+      "about":{
+        "ABOUTME":"ABOUT ME",
+        "description":"I am a passionate developer specializing in the creation of video games and innovative tools. With enriching experience of five years in the field, I have had the privilege of working on a variety of projects that have allowed me to refine my technical and creative skills. Every game and tool I develop reflects my dedication to excellence and my constant desire to learn and innovate. My journey has taught me the importance of collaboration, perseverance, and passion in delivering projects that captivate and engage users. I am always on the lookout for new opportunities to apply my skills to exciting and challenging projects."
+      }
+      
+      
+      
+}

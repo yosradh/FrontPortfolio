@@ -26,7 +26,6 @@
     position: relative;
     left: 100em; /* Définissez la position initiale de l'avatar */
     animation: animTitre 1s linear forwards; /* Utilisez 'forwards' pour conserver la dernière étape de l'animation */
-    ;
 }
 
   
@@ -81,27 +80,6 @@
     }
 }
 
-
-
-
-/*
-.sub-title.collapsed {
-    max-height: 89px; 
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 15px;
-    max-width: 45em;
-    white-space: normal; 
-
-.sub-title.collapsed::after {
-    content: "..."; 
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    background-color: transparent; 
-    padding: 5px 0px;
-}
-*/
 .BtnPlus{
     color: rgb(77, 77, 242);
     font-size: 13px;
@@ -109,9 +87,9 @@
     cursor: pointer;
 }
 
-
-
 .BtnConatct {
+    font-weight: bold;    
+    color:var(--color-text-Contact);
     border: 1px solid rgba(16, 223, 255, 0.958);
     padding: 10px 10px;
     border-radius: 5px;
@@ -119,7 +97,6 @@
     cursor: pointer;
     width: 10em;
     position: relative;
-    color: rgba(16, 223, 255, 0.958);
     background: linear-gradient(90deg, rgba(16, 223, 255, 0.89) 50%, transparent 50%);
     padding: 0.7em 0.5em;
 }

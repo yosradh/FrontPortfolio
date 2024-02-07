@@ -1,0 +1,58 @@
+
+{
+    "header":{
+        "Accueil" : "Accueil",
+        "Compétences":"Compétences",
+        "Projets":"Projets",
+        "Outils":"Outils",
+        "Contact":"Contact",
+        "Navigation": "Navigation"
+    },
+    "hero": {
+        "Bonjour": "Bonjour, je suis", 
+        "Nom":"Maher Jouini",
+        "title":"Développeur de Jeux, Outils & Réseaux Senior, Enseignant Universitaire et Ingénieur en Automatisation.",
+        "subTitle": "Développeur de Jeux, Outils & Réseaux / Enseignant Universitaire / Ingénieur en Automatisation",
+        "seeMore": "Voir plus",
+        "contactMe": "ME CONTACTER"
+      },
+    "content": {
+        "allProjects": "tous les projets",
+        "PC & Consoles Games": "Jeux PC & Consoles",
+        "Personal Projects": "Projets Personnels",
+        "Mobile Casuals": "Jeux Mobiles",
+        "Mobile Hyper Casuals": "Jeux Mobiles Hyper Casuals",
+        "VR/AR": "VR/AR",
+        "More": "plus"
+      },
+      "contact":{
+        "contactTitle":"Contactez-nous",
+        "subtitle":"Contactez-nous pour plus d'informations et soyez informé(e) lorsque je publie quelque chose de nouveau.",
+        "NomPrénom": "Nom Prénom *:",
+        "ObjectEmail": "Object Email *:",
+        "EmailAdresse": "Email Adresse *:",
+        "Yourmessage": "Votre message *:",
+        "Submitting": "Envoi en cours ...",
+        "Submit": "Envoyer",
+        "Your message has been sent successfully": "Votre message a été envoyé avec succès 👌",
+        "Champ obligatoire": "* Champ obligatoire",
+        "PlaceholderNom":"Nom Prénom",
+        "PlaceholderObject":"Object Email",
+        "PlaceholderEmail":"Email Adresse",
+        "PlaceholderMessage":"Votre message"
+      },
+      "footer":{
+        "droits":" Tous droits réservés."
+      },
+      "competances":{
+        "titre1": "COMPÉTENCES",
+        "description":" Elles sont en constantes améliorations car pour moi la joie de ce métier fait que l’on en apprend tous les jours, d’autant plus en étant impliqué, curieux et passionné.",
+        "titre2": "expériences",
+        "telecharger":"Télécharger"
+      },
+      "about":{
+        "ABOUTME":"À PROPOS DE MOI",
+        "description":"Je suis un développeur passionné spécialisé dans la création de jeux vidéo et d'outils innovants. Fort d'une expérience enrichissante de cinq années dans le domaine, j'ai eu le privilège de travailler sur une variété de projets qui m'ont permis d'affiner mes compétences techniques et créatives. Chaque jeu et chaque outil que je développe reflète mon dévouement à l'excellence et mon désir constant d'apprendre et d'innover. Mon parcours m'a enseigné l'importance de la collaboration, de la persévérance et de la passion dans la réalisation de projets qui captivent et engagent les utilisateurs. Je suis toujours à la recherche de nouvelles opportunités pour mettre mes compétences au service de projets passionnants et stimulants."
+      }     
+
+}

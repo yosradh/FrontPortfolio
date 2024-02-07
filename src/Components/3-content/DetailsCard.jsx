@@ -1,24 +1,32 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Projects } from './content';
 import './DetailsStyle.css';
+import { useGetQuerryByNameQuery } from '../../Redux/QuerryAPI';
 
 
 export default function DetailsCard() {
   const navigate = useNavigate();
-  const {id} = useParams();
+  const { id } = useParams();
 
-  const project = Projects.find(project => project.id == id);
+  const { data, error, isLoading } = useGetQuerryByNameQuery(`projects/${id}`);
 
   return (
     <>
-      <div className="containerDetails">
-          <div className="icon-circle-left" onClick={()=> navigate("/project")} />
-          <img width={266} src={`./../${project.img}`} alt=""/>  
-          <h2>{project.title}</h2>
-          <p>{project.description}</p>
-      </div>
+      {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+
+        <div className="containerDetails">
+          <div className="icon-circle-left" onClick={() => navigate("/project")} />
+          {/*<img width={266} src={`./../${project.img}`} alt="" />*/}
+          <h2>{data.data.attributes.title}</h2>
+          <p>{data.data.attributes.description}</p>
+        </div>
+      ) : null
+      }
     </>
-   
+
   )
 }

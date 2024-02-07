@@ -1,30 +1,37 @@
 import React from 'react';
 import './ToolStyle.css';
+import { useGetQuerryByNameQuery } from '../../Redux/QuerryAPI';
 
-
-const ToolsList = [
-    {title: 'Nuked Cockroach studio (The Biggest Tunisian Studio)', link:'https://store.steampowered.com/app/492840/Veterans_Online/',img:'tools.png'},
-    { title: 'Advanced Payerprefs Tool', link:'https://github.com/Meher-StolenPad/PlayerPrefsTool',img:'tools.png'},
-]
 
 export default function Tools() {
-    
+
+  const { data, error, isLoading } = useGetQuerryByNameQuery('tools?populate=*');
+
   return (
     <div className="containerTools">
-        {ToolsList.map((item,index) =>(
+      {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        <>
+          {data.data.map((item, index) => (
             <div className='cardTools' key={index}>
-                <div className = 'image'>
-                    <img src = {item.img} />
-                </div>
-                <div className = 'content'>
-                    <h3>{item.title}</h3>
-                    <a href={item.link}>Link</a>
-                </div>
-            </div>    
-        ))}
-    
-  </div>
-    
-    
+              <div className='image'>
+                <img src={item.attributes.imageTool.data.attributes.name} />
+              </div>
+              <div className='content'>
+                <h3>{item.attributes.title}</h3>
+                <a href={item.attributes.link} target='_blank'>Link</a>
+              </div>
+            </div>
+          ))}
+
+        </>
+      ) : null
+      }
+    </div>
+
+
   )
 }

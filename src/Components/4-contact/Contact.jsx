@@ -1,59 +1,74 @@
-import React from 'react'
+import React from 'react';
+import { useForm, ValidationError } from "@formspree/react";
 import './ContactStyle.css';
 import Lottie from "lottie-react";
 import email from "./email";
+import { useTranslation } from 'react-i18next';
 
 
 export default function Contact() {
-
     
-  const style = {
-    height: '25em',
-    marginTop:'-4em',    
-  };
+  const { t }= useTranslation();
+  const style = {height: '25em',marginTop:'-4em'};
+
+  const [state, handleSubmit] = useForm("xpzvpywq");
+
 
   return (
     <section className="containerContact">
 
-        <span className="sectionTitle">
-          
-          <div className="icon-mail"/>
-          Contact us
+        <span className="sectionTitle">          
+          <div className="icon-mail"/>{t('contact.contactTitle')}
         </span>
-        <p className="paragraphe">Contact us for more information and Get notified when I publish something new.</p>
+
+        <p className="paragraphe">{t('contact.subtitle')}</p>
 
         <div className="SectionB">          
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit} > 
 
-            <div className="NomSection">
-              <label htmlFor="nomPrenom" >Nom Prénom *:</label>
-              <input required type="text" id="nomPrenom" placeholder="nom et prénom" />
-            </div>
+          <div className="NomSection">
+            <label htmlFor="nomPrenom">{t('contact.NomPrénom')}</label>
+            <input required type="text" id="nomPrenom" placeholder={t('contact.PlaceholderNom')} name="Nom" />
+            <ValidationError prefix="NomPrenom" field="nomPrenom"  errors={state.errors} />
+          </div>
+
 
             <div className="ObjectSection">
-              <label htmlFor="ObjectEmail" >Object Email *:</label>
-              <input required type="text"  id="ObjectEmail" placeholder="Object email" />
+              <label htmlFor="ObjectEmail" >{t('contact.ObjectEmail')}</label>
+              <input required type="text"  id="ObjectEmail" placeholder={t('contact.PlaceholderObject')} name="ObjectEmail" />
+              <ValidationError prefix="ObjectEmail" field="ObjectEmail"  errors={state.errors} />
             </div>
 
             <div className="emailSection">
-              <label htmlFor="email" >Email Adresse *:</label>
-              <input required type="email" name="email" id="email" placeholder="Object" />
+              <label htmlFor="email" >{t('contact.EmailAdresse')}</label>
+              <input required type="email" name="email" id="email" placeholder={t('contact.PlaceholderEmail')} />
+              <ValidationError prefix="Email" field="email" errors={state.errors} />
             </div>
             
             <div className="AdresseSection">
-              <label htmlFor="message">Your message *:</label>
-              <textarea required name="message"  id ="message" placeholder="Message" />
+              <label htmlFor="message">{t('contact.Yourmessage')}</label>
+              <textarea required name="message"  id ="message" placeholder={t('contact.PlaceholderMessage')} />
+              <ValidationError prefix="message" field="message" errors={state.errors} />
             </div>
 
-            <button id="BtnSubmit">Envoyer</button>
+            <div className="SubmitSection">
+              <div />
+              <button id="BtnSubmit" type="submit" disabled={state.submitting}>
+                {state.submitting ? t('contact.Submitting') : t('contact.Submit')}
+              </button>
+            </div>
 
-          </form>
+            {state.succeeded && (
+            <p className="messageSucces">              
+              {t('contact.Your message has been sent successfully')}
+            </p>
+          )}
+        </form>
 
           <Lottie className='AnimContact' style={style} animationData={email}/>   
         </div>
 
-        <p className="ChampObligatoire">* Champ obligatoire</p>
-      
+        <p className="ChampObligatoire">{t('contact.Champ obligatoire')}</p>
       
     </section>
   )

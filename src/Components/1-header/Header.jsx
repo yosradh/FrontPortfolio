@@ -2,23 +2,56 @@ import React, { useState,useEffect } from 'react';
 import './HeaderStyle.css';
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 
-const MenuDiv = [
-  {link:"Home", to :"/"},
-  {link:"Compétences", to :"/competances"},
-  {link:"Projects", to :"/project"},
-  {link:"Tools", to :"/tools"},
-  {link:"Contact", to :"/contact"}
 
-]
 export default function Header() {
   const location = useLocation();
+  
+  const { t } = useTranslation();
 
+  const MenuDiv = [
+    {link:t('header.Accueil'), to :"/"},
+    {link:t('header.Compétences'), to :"/competances"},
+    {link:t('header.Projets'), to :"/project"},
+    {link:t('header.Outils'), to :"/tools"},
+    {link:t('header.Contact'), to :"/contact"}
+  ]
+
+  const [MoodLight, setMoodLight] = useState(localStorage.getItem('currentMode') || 'dark');
+  const [Langue,  setLangue] = useState(localStorage.getItem('Lng') || 'en');
+  
   useEffect(() => {
-    // Trouver l'index de l'élément actif basé sur le chemin actuel (location.pathname)
-    const activeIndex = MenuDiv.findIndex(item => item.to === location.pathname);
+    const activeIndex = MenuDiv.findIndex(item => item.to === location.pathname);    // Trouver l'index de l'élément actif basé sur le chemin actuel (location.pathname)
     setActiveItem(activeIndex);
   }, [location.pathname]); 
+
+  useEffect(()=>{
+    if (MoodLight === "light"){
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
+    }else{
+      document.body.classList.remove('light');
+      document.body.classList.add('dark');
+    }
+  },[MoodLight])
+
+  const changeMood = () => {
+    const newMode = MoodLight === "light" ? "dark" : "light";
+    localStorage.setItem('currentMode', newMode);
+    setMoodLight(newMode);
+  }
+
+  const ChangeLangue = (Lng) => {
+    if (Lng === "fr") {
+      setLangue('fr');
+      localStorage.setItem('Lng', 'fr'); 
+    } else {
+      setLangue('en');
+      localStorage.setItem('Lng', 'en'); 
+    }
+    window.location.reload();
+  };
 
   const [activeItem, setActiveItem] = useState(null);
   const [toggle, setToggle] = useState(false);
@@ -35,14 +68,15 @@ export default function Header() {
     setToggle(false);
   };
 
+
   return (
-    <header>
+    <header className="MoodLight" style={{display:'flex'}}>
       <div className="MenuDiv">
         <button className='Menu icon-menu' onClick={ShowMenu} />
       </div>
 
       <div className='ImgParty'>
-        <Link to="/"><img src='./Maher1.png' className='Avatar' alt="" /></Link>
+        <Link to="/"><img src='./Maher.png' className='Avatar' alt="" /></Link>
       </div>
 
       <nav className="navbar">
@@ -55,15 +89,34 @@ export default function Header() {
         </ul>
       </nav>
 
-      <div className="Mood">
-        <button className='icon-moon-stars' />
+      <div className="Mood" onClick={changeMood}>
+        <button
+          onClick={() => {
+            // Send value to LS
+            localStorage.setItem("currentMode",MoodLight === "dark"? "light" : "dark");
+            // get value from LS
+            setMoodLight(localStorage.getItem("currentMode"));
+          }}
+          className="mode flex">
+            
+          {MoodLight === "dark" ? (
+            <span className="icon-sun"> </span>
+          ) : (
+            <span className="icon-moon-stars"> </span>
+          )}
+        </button>
       </div>
+
+      <select id="Langue" name="Langue" className="Langue" value={Langue} onChange={(e) => ChangeLangue(e.target.value)}>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+      </select>
 
       {toggle && (
         <div className="fixed">
           <div className="modal">
             <div className='headerModal'>
-              <p className="navigationTitle">Navigation</p>
+              <p className="navigationTitle">{t('header.Navigation')}</p>
               <button className="closeBtn icon-close" onClick={FermerModal} />
             </div>
             

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:ital,wght@0,100;0,500;0,700;1,300;1,400&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Teko:700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 html{
   font-family: 'Poppins', sans-serif;
@@ -26,15 +28,41 @@ html{
   --color-hover:rgb(186,81,2);
   --color-pop-up-color:#050505;
   --color-text-subtitle:rgb(154,154,163);
+  --color-text-body:#ffffff;
+  --color-background-projects:rgba(36,37,46,1);
+  --color-text-projects:white;
+  --color-background-buttonSubmit: rgba(36, 37, 46 ,1);
+  --color-text-experiences: #9a9797;
+  --color-text-Contact: rgb(8, 87, 197);
+  --color-background-Mood: rgb(37,37,41);
+  --color-border-Mood:rgb(42,42,43,1);
+
+  --color-texte-Competances : #fff;
 }
 
 .light{
   --color-background: #fff;
+  --color-background-main:#edecec;
+  --color-border-background:#edecec;
+  --color-text-subtitle:black;
+  --color-text-body:black;
+  --color-background-navbar:#edecec;
+  --color-pop-up-color:#edecec;
+  --color-background-projects:#fff;
+  --color-text-projects:black;
+  --color-background-buttonSubmit:#54728291;
+  --color-text-experiences: black;
+  --color-text-Contact: rgb(8, 87, 197);
+  --color-background-Mood: rgba(168, 168, 169, 0.826);
+  --color-border-Mood:rgba(193, 193, 193, 0.43);
+  
+  --color-texte-Competances : rgb(9, 97, 221);
 }
+
 
 body{
   background-color: var(--color-background);
-  color: #fff;
+  color: var(--color-text-body);
 } 
 
 .containerApp{
